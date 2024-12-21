@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&family=Pacifico&family=Poppins:wght@400;600&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('back12.gif'); 
+            background-size: cover;
+            background-repeat: no-repeat; 
+            background-position: center; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #3b2a2a; /* Changed text color to dark nude */
+            scroll-behavior: smooth;
+        }
+
+        /* Header Navigation */
+        .header {
+            width: 100%;
+            background-color: rgba(210, 180, 140, 0.9); /* Changed header background to dark nude */
+            padding: 15px 0;
+            color: #fff;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .header a {
+            font-family: 'Quicksand', sans-serif;
+            color: #3b2a2a; /* Changed link color */
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .header a:hover {
+            color: #d1b2a1; /* Changed hover color */
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 800px;
+            margin: 40px;
+            padding: 30px;
+            background-color: rgba(240, 220, 200, 0.9); /* Changed container background to a lighter dark nude */
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .container img {
+            border-radius: 50%;
+            margin-bottom: 20px;
+            width: 200px;
+            height: 255px;
+            animation: advancedProfileAnimation 2s ease-in-out infinite;
+        }
+
+        @keyframes advancedProfileAnimation {
+            0% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+            25% {
+                transform: scale(1.1) rotate(-5deg);
+                opacity: 0.9;
+            }
+            50% {
+                transform: scale(1.2) rotate(5deg);
+                opacity: 0.8;
+            }
+            75% {
+                transform: scale(1.1) rotate(-5deg);
+                opacity: 0.9;
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        .container h2 {
+            font-family: 'Pacifico', cursive;
+            color: #3b2a2a; /* Changed heading color to dark nude */
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            animation: slideIn 1.5s forwards, bounce 1s infinite;
+            opacity: 0;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .container p {
+            color: #3b2a2a; /* Changed paragraph color to dark nude */
+            margin-bottom: 20px;
+            font-size: 1.2em;
+            animation: slideIn 0.8s forwards;
+            opacity: 0;
+        }
+
+        /* Section Styles */
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: rgba(240, 220, 200, 0.8); /* Changed section background to a lighter dark nude */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: reveal 1.3s forwards;
+        }
+
+        @keyframes reveal {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        section h3 {
+            font-family: 'Cookie', cursive;
+            color: #3b2a2a; /* Changed section heading color to dark nude */
+            margin-bottom: 10px;
+            border-bottom: 2px solid #d1b2a1; /* Changed border color */
+            padding-bottom: 5px;
+            font-size: 2.5em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 50px 0;
+            background-color: rgba(139, 115, 100, 0.8); /* Changed table background to dark nude */
+        }
+
+        table td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            color: #3b2a2a; /* Changed table text color to dark nude */
+        }
+
+        table tr:nth-child(even) {
+            background-color: rgba(210, 180, 140, 0.6); /* Changed even row background color to a lighter nude */
+        }
+
+        table td:first-child {
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Animation Classes */
+        .fadeIn {
+            animation: fadeIn 1s forwards;
+        }
+
+        .slideIn {
+            animation: slideIn 1s forwards;
+        }
+
+        .zoomIn {
+            animation: zoomIn 1s forwards;
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* List Styles */
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        /* Gallery Styles */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .gallery img {
+            width: 330px;
+            height: 300px;
+            margin: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            animation: fadeIn 0.5s forwards;
+            opacity: 0;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.10);
+        }
+
+        /* Audio and Video Styles */
+        .media {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .media audio, .media video {
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(210, 180, 140, 0.9); /* Changed footer background to dark nude */
+            color: white;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Contact Table Styles */
+        .contact-table {
+            width: 100%;
+            max-width: 800px; /* Set a maximum width */
+            background-color: rgba(240, 220, 200, 0.9); /* Changed contact table background to a lighter dark nude */
+            border-radius: 8px; /* Add border radius */
+        }
+
+        .contact-table td {
+            padding: 10px;
+            border: none;
+        }
+
+        /* Animated Icons */
+        .icon {
+            width: 60px;
+            height: 60px;
+            transition: transform 0.3s;
+            animation: scaleIn 0.5s ease-in-out;
+        }
+
+        .icon:hover {
+            transform: scale(1.2);
+        }
+
+        /* Form Styles */
+        form {
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        form label {
+            display: block;
+            margin: 5px 0;
+        }
+
+        form input[type="text"], form input[type="radio"] {
+            margin-bottom: 10px;
+            padding: 8px;
+            width: calc(100% - 16px);
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form input[type="submit"] {
+            background-color: #d1b2a1;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #b59b79;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 600px) {
+            .header a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            .gallery img {
+                width: 100%; /* Full width for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <div class="header">
+	<a href="home.html">HOME</a>
+        <a href="biodata.html">BIODATA</a>
+        <a href="education.html">EDUCATION</a>
+        <a href="family.html">FAMILY</a>
+        <a href="experience.html">EXPERIENCE</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="audio.html">AUDIO AND VIDEO</a>
+        <a href="contactme.html">CONTACT ME</a>
+	<a href="contactus.html">CONTACT US</a>
+
+    </div>
+<section id="audio">
+        <h3>Audio and Video</h3>
+        <div class="media">
+            <audio controls autoplay="opacity:0.8; width:100%; max-width: 300px;">
+                <source src="audio3.mp3" type="audio/mp3">
+                </audio>
+            <video width="500" controls>
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
